@@ -9,7 +9,7 @@ export class AuthController {
   constructor(private _authService: AuthService) {}
 
 	@Post('/')
-  loginUser(@Body() { login }: LoginInfo): SuccessResponse {
+  loginUser(@Body() { login }: LoginInfo): Promise<SuccessResponse> {
     return this._authService.login(login);
   }
 }
